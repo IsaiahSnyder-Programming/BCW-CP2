@@ -9,13 +9,120 @@
     <link rel="stylesheet" href="style.css">
 
     <title>Document</title>
+
+    <style>
+      body.debug .container,
+      body.debug .container-fluid {
+        outline: 2px double blue;
+        outline-offset: -2px;
+      }
+    
+      body.debug .row {
+        outline: 2px dashed red;
+        outline-offset: -2px;
+      }
+    
+      body.debug [class*="col-"] {
+        outline: 2px dotted forestgreen;
+        outline-offset: -3px;
+      }
+    </style>
 </head>
 
 
 
 
 
-<body>
+<body class="debug">
+
+    <header class="container-fluid bg-dark">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-between text-light p-3 mt-1">
+                <h1>Stuff</h1>
+                <h2>Chickens: <span id="chickenCount">0</span></h2>
+            </div>
+        </div>
+    </header>
+
+
+
+    <main class="container-fluid bg-light">
+        <div class="row">
+            <div class="col-12">
+
+
+                
+                <div class="row">
+
+
+                    <!-- NOTE Upgrade Buttons -->
+                    <div class="col-3">
+
+                        <div class="row" id="upgrade-button">
+                            <!-- STUB Button Upgrade Template -->
+                            <div class="col-12 p-5 justify-content-center" onclick="">
+                                <img class="upgrade-button" src="//thiscatdoesnotexist.com/" alt="">
+                                <h3 class="m-2">Upgrade</h3>
+                            </div>
+                            <!-- End Of Template -->
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- NOTE Clicker -->
+                    <div class="col-6">
+
+                        <div class="row justify-content-center clicker-height" id="clicker">
+                            <!-- STUB Clicker Template -->
+                            <div class="col-12 d-flex justify-content-center align-items-center" onclick="makeChicken()">
+                                <img class="clicker rounded-2" src="//thiscatdoesnotexist.com/" alt="A Cat" id="">
+                            </div>
+                            <!-- End Of Template -->    
+                        </div>
+
+                    </div>
+                        
+
+
+                    <!-- NOTE Aquired Upgrades -->
+                    <div class="col-3">
+
+                        <div class="row" id="upgrade-aquire">
+                            <!-- STUB Aquired Upgrade Template -->
+                            <div class="col-12 p-5 justify-content-center">
+                                <img class="upgrade-aquire" src="//thiscatdoesnotexist.com/" alt="">
+                                <h3 class="m-2">Upgrade</h3>
+                            </div>
+                            <!-- End Of Template -->
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+
+
+                <!-- NOTE Upgrade Footer -->
+                <div class="row">
+                    <div class="col-12">
+                        more Stuff
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+    <footer class="container-fluid bg-light">
+        
+    </footer>
+
+
     
 </body>
 

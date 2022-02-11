@@ -1,0 +1,46 @@
+/* header {
+    min-height: 5vh;
+} */
+
+main {
+    min-height: 90vh;
+}
+
+.upgrade-button {
+    height: 15vh;
+    width: 15vh;
+    object-fit: cover;
+    border: solid 3px black;
+    border-radius: 2%;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+.upgrade-button:hover {
+    transform: scale(1.02);
+}
+
+.clicker-height {
+    min-height: 75vh;
+}
+.clicker {
+    height: 40vh;
+    width: 40vh;
+    object-fit: cover;
+    border: solid 3px black;
+    border-radius: 40%;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+.clicker:hover {
+    transform: scale(1.02);
+}
+
+.upgrades {
+    border: solid 3px black;
+}
+
+.upgrade-aquire {
+    height: 15vh;
+    width: 15vh;
+    object-fit: cover;
+}
