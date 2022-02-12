@@ -23,18 +23,18 @@ let clickerUpgrades = {
 let autoUpgrades = {
     double: {
         id: 1,
-        name: '+1/Sec',
+        name: '+100/Sec',
         price: 1,
         quantity: 0,
-        multiplier: 1,
+        multiplier: 100,
         image: '//thiscatdoesnotexist.com/'
     },
     triple: {
         id: 1,
-        name: '+100/Sec',
+        name: '+10,000/Sec',
         price: 1,
         quantity: 0,
-        multiplier: 1,
+        multiplier: 10000,
         image: '//thiscatdoesnotexist.com/'
     },
 }
@@ -57,6 +57,7 @@ function drawUB() {
         `
         document.getElementById('upgrade-button').innerHTML = template
     }
+    drawClickTotal()
 }
 
 function drawUA() {
@@ -91,6 +92,7 @@ function drawAutoBtn() {
         `
         document.getElementById('auto-upgrades').innerHTML = template
     }
+    drawAutoTotal()
 }
 
 function drawAutoUpgrade() {
@@ -111,8 +113,7 @@ function drawAutoUpgrade() {
 }
 
 
-function upgradeItem(key) {
-   
+function upgradeItem(key) { 
         let item = clickerUpgrades[key]
         if(chickenAmount >= item.price) {
             chickenAmount -= item.price
@@ -131,18 +132,36 @@ function autoUpgradeItem(key) {
             item.quantity++
             item.price += 2
             document.getElementById('chickenCount').innerText = chickenAmount.toFixed()
-
         } 
         drawAutoBtn()
         drawAutoUpgrade()
 }
 
+function drawClickTotal() {
+    let item = 1 + clickerUpgrades.double.multiplier * clickerUpgrades.double.quantity
+    let item2 = clickerUpgrades.triple.multiplier * clickerUpgrades.triple.quantity 
+
+    let total = item + item2
+
+    console.log(clickerUpgrades.double.multiplier + clickerUpgrades.double.quantity);
+    document.getElementById('chicken-click').innerText = total.toFixed()
+}
+
+function drawAutoTotal() {
+    let item = autoUpgrades.double.multiplier * autoUpgrades.double.quantity
+    let item2 = autoUpgrades.triple.multiplier * autoUpgrades.triple.quantity 
+
+    let total = item + item2
+
+    console.log(autoUpgrades.double.multiplier + autoUpgrades.double.quantity);
+    document.getElementById('chicken-second').innerText = total.toFixed()
+}
 
 
 function makeChicken() {
     chickenAmount++
     document.getElementById('chickenCount').innerText = chickenAmount.toFixed()
-    
+
     for(let key in clickerUpgrades) {
         let item = clickerUpgrades[key]
         
@@ -153,13 +172,18 @@ function makeChicken() {
             document.getElementById('chickenCount').innerText = chickenAmount.toFixed()
         }
     }
+
+    
 }
 
 function autoChicken() {
     for (let key in autoUpgrades) {
         let item = autoUpgrades[key]
+
         if(item.quantity >= 1){
+
             chickenAmount += item.multiplier * item.quantity
+
             document.getElementById('chickenCount').innerText = chickenAmount.toFixed()
         }
     }
@@ -171,3 +195,6 @@ drawUA()
 drawAutoBtn()
 drawAutoUpgrade()
 setInterval(autoChicken, 1000);
+
+drawClickTotal()
+drawAutoTotal()
