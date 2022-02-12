@@ -5,7 +5,7 @@ let clickerUpgrades = {
     double: {
         id: 1,
         name: 'Double',
-        price: 10,
+        price: 1,
         quantity: 0,
         multiplier: 2,
         image: '//thiscatdoesnotexist.com/'
@@ -13,7 +13,7 @@ let clickerUpgrades = {
     triple: {
         id: 2,
         name: 'Triple',
-        price: 20,
+        price: 1,
         quantity: 0,
         multiplier: 3,
         image: '//thiscatdoesnotexist.com/'
@@ -27,7 +27,7 @@ function drawUB() {
     for (let key in clickerUpgrades) {
         let item = clickerUpgrades[key]
         template += `
-        <div class="col-12 mt-3 d-flex justify-content-center" onclick="upgradeItem(${item.id})">
+        <div class="col-12 mt-3 d-flex justify-content-center" onclick="upgradeItem('${key}')">
             <img class="upgrade-button" src="${item.image}" alt="">
         </div>
         <div class="col-12 mb-3 d-flex justify-content-center" onclick="">
@@ -57,11 +57,15 @@ function drawUA() {
 }
 
 
-function upgradeItem(itemID) {
+function upgradeItem(key) {
 
-    for (let key in clickerUpgrades) {
+    // let item = clickerUpgrades[itemID]
+    // console.log();
+
+
+   
         let item = clickerUpgrades[key]
-
+            console.log('key: ', key);
         if(chickenAmount >= item.price) {
             chickenAmount -= item.price
             item.quantity++
@@ -72,7 +76,7 @@ function upgradeItem(itemID) {
         } 
         drawUB()
         drawUA()
-    }
+
 
 }
 
