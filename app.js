@@ -22,6 +22,7 @@ let clickerUpgrades = {
 
 
 
+
 function drawUB() {
     let template = ''
     for (let key in clickerUpgrades) {
@@ -58,14 +59,8 @@ function drawUA() {
 
 
 function upgradeItem(key) {
-
-    // let item = clickerUpgrades[itemID]
-    // console.log();
-
-
    
         let item = clickerUpgrades[key]
-            console.log('key: ', key);
         if(chickenAmount >= item.price) {
             chickenAmount -= item.price
             item.quantity++
@@ -77,14 +72,30 @@ function upgradeItem(key) {
         drawUB()
         drawUA()
 
-
 }
+
+
 
 function makeChicken() {
     chickenAmount++
     console.log(chickenAmount)
     document.getElementById('chickenCount').innerText = chickenAmount.toFixed()
+
+
+    // FIXME DO THE THINGY YOU DID WITH THE TA
+    // for(let key in clickerUpgrades) {
+    //     let item = clickerUpgrades[key]
+
+    //     if(item.quantity >= 1){
+    //         chickenAmount += item.multiplier
+    //         console.log('MoreClick Works')
+    //         document.getElementById('chickenCount').innerText = chickenAmount.toFixed()
+            
+    //     }
+    // }
 }
+
 
 drawUB()
 drawUA()
+// setInterval(insertFunctionRules, 3000);
