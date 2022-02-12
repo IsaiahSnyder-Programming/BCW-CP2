@@ -110,12 +110,6 @@ function drawAutoUpgrade() {
     }
 }
 
-function drawClickerStats(key) {
-    let item = clickerUpgrades[key]
-    
-
-    document.getElementById('chicken-click').innerText = item.multiplier
-}
 
 function upgradeItem(key) {
    
@@ -124,15 +118,10 @@ function upgradeItem(key) {
             chickenAmount -= item.price
             item.quantity++
             item.price += 2
-            console.log(clickerUpgrades);
             document.getElementById('chickenCount').innerText = chickenAmount.toFixed()
-
         } 
         drawUB()
         drawUA()
-        drawClickerStats(key)
-        
-
 }
 
 function autoUpgradeItem(key) {
@@ -141,28 +130,23 @@ function autoUpgradeItem(key) {
             chickenAmount -= item.price
             item.quantity++
             item.price += 2
-            console.log(autoUpgrades);
             document.getElementById('chickenCount').innerText = chickenAmount.toFixed()
 
         } 
         drawAutoBtn()
         drawAutoUpgrade()
-        // drawStats(key)
 }
 
 
 
 function makeChicken() {
     chickenAmount++
-    console.log(chickenAmount)
     document.getElementById('chickenCount').innerText = chickenAmount.toFixed()
-    
     
     for(let key in clickerUpgrades) {
         let item = clickerUpgrades[key]
         
         if(item.quantity >= 1){
-            console.log('MoreClick Works')
             
             chickenAmount += item.multiplier * item.quantity
 
@@ -174,12 +158,8 @@ function makeChicken() {
 function autoChicken() {
     for (let key in autoUpgrades) {
         let item = autoUpgrades[key]
-
         if(item.quantity >= 1){
-            console.log('autoChicken Works')
-
             chickenAmount += item.multiplier * item.quantity
-
             document.getElementById('chickenCount').innerText = chickenAmount.toFixed()
         }
     }
@@ -190,4 +170,4 @@ drawUB()
 drawUA()
 drawAutoBtn()
 drawAutoUpgrade()
-setInterval(autoChicken, 3000);
+setInterval(autoChicken, 1000);
