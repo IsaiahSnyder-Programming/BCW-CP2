@@ -1,6 +1,5 @@
 let chickenAmount = 0
 
-let cart = []
 
 let clickerUpgrades = {
     double: {
@@ -42,15 +41,15 @@ function drawUB() {
 
 function drawUA() {
     let template = ''
-    for (let i = 0; i < cart.length; i++) {
-        const item = cart[i];
+    for (let key in clickerUpgrades) {
+        let item = clickerUpgrades[key]
         template += `
         <div class="col-12 mt-3 d-flex justify-content-center">
             <img class="upgrade-button" src="${item.image}" alt="">
         </div>
-        <div class="col-12 mb-3 d-flex justify-content-center" onclick="">
+        <div class="col-12 mb-3 d-flex justify-content-between" onclick="">
             <h2 class="m-2">${item.name}:</h2>
-            <h2 class="m-2">${item.price}</h2>
+            <h2 class="m-2">Level ${item.quantity}</h2>
         </div>
         `
         document.getElementById('upgrade-aquire').innerHTML = template
@@ -58,14 +57,22 @@ function drawUA() {
 }
 
 
-function upgradeItem(upgradeID) {
+function upgradeItem(itemID) {
 
-    cart.push(upgradeID)
-    console.log(cart);
+    for (let key in clickerUpgrades) {
+        let item = clickerUpgrades[key]
 
-    chickenAmount -= 10
-    document.getElementById('chickenCount').innerText = chickenAmount.toFixed()
-    drawUA()
+        if(chickenAmount >= item.price) {
+            chickenAmount -= item.price
+            item.quantity++
+            item.price += 2
+            console.log(clickerUpgrades);
+            document.getElementById('chickenCount').innerText = chickenAmount.toFixed()
+
+        } 
+        drawUB()
+        drawUA()
+    }
 
 }
 
@@ -76,3 +83,4 @@ function makeChicken() {
 }
 
 drawUB()
+drawUA()
