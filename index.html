@@ -33,20 +33,23 @@
 
 
 
-<body class="debug">
+<body class="">
 
     <header class="container-fluid bg-dark">
         <div class="row">
-            <div class="col-12 d-flex justify-content-between text-light p-3 mt-1">
-                <h1>Stuff</h1>
-                <h2>Chickens: <span id="chickenCount">0</span></h2>
+            <div class="col-12 d-flex justify-content-between align-items-center text-light p-3 mt-1">
+                <h1 class="border rounded-2 p-2">The Chickenator</h1>
+                <h2>
+                    <img class="chicken-image" src="https://user-images.githubusercontent.com/95538618/146848739-b0df6363-8221-4fb3-bfc1-fd2f4442bd7c.png" alt="">
+                    <span id="chickenCount">0</span>
+                </h2>
             </div>
         </div>
     </header>
 
 
 
-    <main class="container-fluid bg-light">
+    <main class="container-fluid bg-dark">
         <div class="row">
             <div class="col-12">
 
@@ -56,7 +59,7 @@
 
 
                     <!-- NOTE Upgrade Buttons -->
-                    <div class="col-3">
+                    <div class="col-3 bg-dark text-light">
 
                         <div class="row" id="upgrade-button">
                             <!-- STUB Button Upgrade Template -->
@@ -81,10 +84,10 @@
 
 
                     <!-- NOTE Clicker -->
-                    <div class="col-6">
+                    <div class="col-6 bg-olive">
 
                         <!-- STUB Stats -->
-                        <div class="row" id="stats-footer">
+                        <div class="row bg-wood text-light" id="stats-footer">
                             <div class="col-12 p-2">
                                 <h3>Chickens Per Click: <span id="chicken-click">0</span></h3>
                                 <h3>Chickens Per Second: <span id="chicken-second">0</span></h3>
@@ -94,7 +97,7 @@
                         <div class="row justify-content-center clicker-height" id="clicker">
                             <!-- STUB Clicker Template -->
                             <div class="col-12 d-flex justify-content-center align-items-center" onclick="makeChicken()">
-                                <img class="clicker rounded-2" src="//thiscatdoesnotexist.com/" alt="A Cat" id="">
+                                <img class="clicker rounded-2" src="https://user-images.githubusercontent.com/95538618/146848739-b0df6363-8221-4fb3-bfc1-fd2f4442bd7c.png" alt="A Cat" id="">
                             </div>
                             <!-- End Of Template -->    
                         </div>
@@ -104,7 +107,7 @@
 
 
                     <!-- NOTE Aquired Upgrades -->
-                    <div class="col-3">
+                    <div class="col-3 bg-dark text-light">
 
                         <div class="row" id="upgrade-aquire">
                             <!-- STUB Aquired Upgrade Template -->
@@ -138,10 +141,6 @@
     </main>
 
 
-
-    <footer class="container-fluid bg-light">
-        
-    </footer>
 
 
     

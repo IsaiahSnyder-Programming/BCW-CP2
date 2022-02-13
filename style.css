@@ -4,6 +4,21 @@
 
 main {
     min-height: 90vh;
+    background-color: olivedrab;
+}
+
+.bg-olive {
+    background-color: olivedrab;
+}
+
+.bg-wood {
+    background-color: rgb(148, 105, 48);
+}
+
+.chicken-image {
+    width: 10vh;
+    height: 10vh;
+
 }
 
 .upgrade-button {

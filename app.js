@@ -8,15 +8,15 @@ let clickerUpgrades = {
         price: 1,
         quantity: 0,
         multiplier: 1,
-        image: '//thiscatdoesnotexist.com/'
+        image: 'https://i.etsystatic.com/9694683/r/il/939064/1543128637/il_570xN.1543128637_nbcf.jpg'
     },
     triple: {
         id: 2,
         name: '+100/Click',
-        price: 1,
+        price: 150,
         quantity: 0,
         multiplier: 99,
-        image: '//thiscatdoesnotexist.com/'
+        image: 'https://preview.redd.it/71jas7mrike41.png?width=216&format=png&auto=webp&s=2871c7f623a49dfd463cf481f8f179f020a701a6'
     },
 }
 
@@ -24,18 +24,18 @@ let autoUpgrades = {
     double: {
         id: 1,
         name: '+100/Sec',
-        price: 1,
+        price: 5000,
         quantity: 0,
         multiplier: 100,
-        image: '//thiscatdoesnotexist.com/'
+        image: 'https://ih1.redbubble.net/image.1147805949.0968/st,small,845x845-pad,1000x1000,f8f8f8.jpg'
     },
     triple: {
         id: 1,
         name: '+10,000/Sec',
-        price: 1,
+        price: 15000,
         quantity: 0,
         multiplier: 10000,
-        image: '//thiscatdoesnotexist.com/'
+        image: 'https://i.etsystatic.com/21303249/r/il/20e35b/2164767724/il_fullxfull.2164767724_qies.jpg'
     },
 }
 
@@ -118,7 +118,7 @@ function upgradeItem(key) {
         if(chickenAmount >= item.price) {
             chickenAmount -= item.price
             item.quantity++
-            item.price += 2
+            item.price *= 2
             document.getElementById('chickenCount').innerText = chickenAmount.toFixed()
         } 
         drawUB()
@@ -130,7 +130,7 @@ function autoUpgradeItem(key) {
         if(chickenAmount >= item.price) {
             chickenAmount -= item.price
             item.quantity++
-            item.price += 2
+            item.price *= 2
             document.getElementById('chickenCount').innerText = chickenAmount.toFixed()
         } 
         drawAutoBtn()
